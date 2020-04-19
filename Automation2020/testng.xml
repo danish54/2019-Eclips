@@ -3,7 +3,7 @@
 <suite name="Suite">
   <test thread-count="5" name="Test">
     <classes>
-      <class name="newcms.newcms_base"/>
+      <class name="newcms.Urlcount"/>
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->
