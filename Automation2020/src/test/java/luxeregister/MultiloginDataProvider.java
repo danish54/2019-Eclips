@@ -18,6 +18,27 @@ public class MultiloginDataProvider {
 	WebDriverWait wait;
 	
 	
+	@DataProvider(name= "testdata")
+	
+	public Object[][] testdatafeed(){
+	
+	Xls_Reader config = new Xls_Reader(System.getProperty("user.dir") + "\\src\\test\\resources\\Excel_Data\\Test_Data4.xlsx");
+	
+	int rows = config.getRowCount("Sheet1");
+	
+	Object[][] logindata = new Object[rows][2];
+	
+	for(int i=0; i<=rows; i++) {
+		
+		logindata[i][0] = config.getCellData("sheet1", 1, i);
+		logindata[i][1] = config.getCellData("sheet1", 2, i);
+	}
+		
+		return logindata;
+	}
+	
+	
+	
 	@Test(dataProvider = "testdata")
 	public void multilogindataprovider(String username, String password) throws InterruptedException {
 		
@@ -52,23 +73,6 @@ public class MultiloginDataProvider {
 
 	
 	
-	@DataProvider(name= "testdata")
-		
-		public Object[][] testdatafeed(){
-		
-		Xls_Reader config = new Xls_Reader(System.getProperty("user.dir") + "\\src\\test\\resources\\Excel_Data\\Test_Data.xlsx");
-		
-		int rows = config.getColumnCount("sheet1");
-		
-		Object[][] credential = new Object[rows][2];
-		
-		for(int i=1; i<rows; i++) {
-			
-			credential[i][1] = config.getCellData("sheet1", i, 1);
-			credential[i][2] = config.getCellData("sheet1", i, 2);
-		}
-			
-			return credential;
-		}
+	
 	
 }

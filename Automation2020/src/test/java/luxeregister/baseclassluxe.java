@@ -15,6 +15,7 @@ import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.io.FileHandler;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class baseclassluxe {
 
@@ -22,7 +23,7 @@ public class baseclassluxe {
 	public static Properties config = new Properties();
 	public static Properties OR = new Properties();
 	public static FileInputStream fis;
-
+                  WebDriverWait wait;
 	
 	
 	// Setup Browser
@@ -46,6 +47,10 @@ public class baseclassluxe {
 		driver.manage().timeouts().pageLoadTimeout(80, TimeUnit.SECONDS);
 		driver.manage().timeouts().implicitlyWait(40, TimeUnit.SECONDS);
 		driver.manage().deleteAllCookies();
+		
+		driver.get("https://dev.theluxeregister.com/");
+		wait = new WebDriverWait(driver, 30);
+		driver.findElement(By.className("nav-link sign-in-btn")).click();
 	}
 
 	// Login method with hardcode locators
@@ -55,18 +60,7 @@ public class baseclassluxe {
 		
 		
 		base.Setup();
-		driver.get("https://dev.theluxeregister.com/");
-
-		/*
-		 * boolean Ele = base.isElementPresent(driver,
-		 * By.className("nav-link sign-in-btn"));
-		 * 
-		 * if (Ele==true) {
-		 * driver.findElement(By.className("nav-link sign-in-btn")).click(); }
-		 */
-
 		
-		driver.findElement(By.className("nav-link sign-in-btn")).click();
 		driver.findElement(By.id("userEmail")).sendKeys("danish.ali@hipster-inc.com");
 		driver.findElement(By.id("pass")).sendKeys("123456789");
 		driver.findElement(By.xpath("//a[@class='btn dark-btn sign-btn']")).click();
