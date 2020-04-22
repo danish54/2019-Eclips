@@ -2,24 +2,20 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2020-04-22T09:01:59 IST" name="Default suite" finished-at="2020-04-22T09:03:34 IST" duration-ms="94506">
+  <suite started-at="2020-04-22T16:30:38 IST" name="Default suite" finished-at="2020-04-22T16:31:21 IST" duration-ms="42847">
     <groups>
     </groups>
-    <test started-at="2020-04-22T09:01:59 IST" name="Default test" finished-at="2020-04-22T09:03:34 IST" duration-ms="94506">
-      <class name="luxeregister.MultiLoginExecl">
-        <test-method is-config="true" signature="TestSetup()[pri:0, instance:luxeregister.MultiLoginExecl@433d61fb]" started-at="2020-04-22T09:01:59 IST" name="TestSetup" finished-at="2020-04-22T09:02:18 IST" duration-ms="18655" status="PASS">
+    <test started-at="2020-04-22T16:30:38 IST" name="Default test" finished-at="2020-04-22T16:31:21 IST" duration-ms="42847">
+      <class name="luxeregister.LinkCountTest">
+        <test-method signature="operation()[pri:0, instance:luxeregister.LinkCountTest@4690b489]" started-at="2020-04-22T16:30:38 IST" name="operation" finished-at="2020-04-22T16:31:20 IST" duration-ms="42525" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- TestSetup -->
-        <test-method signature="ReadData()[pri:0, instance:luxeregister.MultiLoginExecl@433d61fb]" started-at="2020-04-22T09:02:18 IST" name="ReadData" finished-at="2020-04-22T09:03:33 IST" duration-ms="75091" status="PASS">
+        </test-method> <!-- operation -->
+        <test-method is-config="true" signature="Closebrowser()[pri:0, instance:luxeregister.LinkCountTest@4690b489]" started-at="2020-04-22T16:31:20 IST" name="Closebrowser" finished-at="2020-04-22T16:31:21 IST" duration-ms="230" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- ReadData -->
-        <test-method is-config="true" signature="CloseBrowser()[pri:0, instance:luxeregister.MultiLoginExecl@433d61fb]" started-at="2020-04-22T09:03:33 IST" name="CloseBrowser" finished-at="2020-04-22T09:03:34 IST" duration-ms="694" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- CloseBrowser -->
-      </class> <!-- luxeregister.MultiLoginExecl -->
+        </test-method> <!-- Closebrowser -->
+      </class> <!-- luxeregister.LinkCountTest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
