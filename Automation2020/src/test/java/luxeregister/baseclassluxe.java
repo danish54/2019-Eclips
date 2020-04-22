@@ -10,9 +10,11 @@ import java.util.concurrent.TimeUnit;
 
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.By;
+import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.io.FileHandler;
 
 public class baseclassluxe {
 
@@ -93,17 +95,6 @@ public class baseclassluxe {
 	}
 
 	
-	//Screenshot method
-	public static void capturescreenshot() throws IOException {
-		Date d = new Date();
-		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH-mm-ss");
-		File ssFile = ((TakesScreenshot) (driver)).getScreenshotAs(org.openqa.selenium.OutputType.FILE);
-		FileUtils.copyFile(ssFile, new File(
-				"E:\\eclipse-jee-neon-3-win32-x86_64\\New folder\\Automation\\src\\excel\\" + sdf.format(d) + ".jpg"));
-
-	}
-
-	
 	//login method with OR properties
 	public void loginOR() throws IOException, InterruptedException {
 
@@ -119,15 +110,29 @@ public class baseclassluxe {
 		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 	}
 
+
 	
-	//screenshot second method
+	//screenshot first method using FileUtils
 	public void captureSnapShot() throws IOException {
 		Date d = new Date();
 		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH-mm-ss");
-		File ssFile = ((TakesScreenshot) (driver)).getScreenshotAs(org.openqa.selenium.OutputType.FILE);
+		File ssFile = ((TakesScreenshot) (driver)).getScreenshotAs(OutputType.FILE);
 		FileUtils.copyFile(ssFile, new File(
 				"E:\\eclipse-jee-neon-3-win32-x86_64\\New folder\\Automation\\src\\excel\\" + sdf.format(d) + ".jpg"));
 	}
+	
+	//screenshot third method using FileHandler
+	public void getScreenShot() {
+	      try {
+	            File scrFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+	            //The below method will save the screen shot in destination directory with name "screenshot.png"
+	             FileHandler.copy(scrFile, new File("D:/reports/screenshot.png"));
+	         } catch (IOException e) {
+	             e.printStackTrace();
+	            }
+	  }
+	
+	
 	
 	
 	//CLosing method
