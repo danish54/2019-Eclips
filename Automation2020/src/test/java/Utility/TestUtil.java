@@ -7,13 +7,13 @@ import java.util.Date;
 
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.TakesScreenshot;
+import org.openqa.selenium.WebDriver;
 
-import Rough.BaseClassRough;
 
-public class TestUtil extends BaseClassRough 
+public class TestUtil  
 {
 	
-	public static void capturescreenshot() throws IOException{
+	public static void capturescreenshot(WebDriver driver) throws IOException{
 		Date d = new Date();
 		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH-mm-ss");
 		File ssFile = ((TakesScreenshot) (driver)).getScreenshotAs(org.openqa.selenium.OutputType.FILE);

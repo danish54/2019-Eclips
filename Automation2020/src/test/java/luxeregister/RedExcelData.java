@@ -15,7 +15,7 @@ public class RedExcelData {
 
         ArrayList data = new ArrayList();
 
-        FileInputStream file = new FileInputStream(System.getProperty("user.dir") + "\\src\\test\\resources\\Excel_Data\\Test_Data.xlsx");
+        FileInputStream file = new FileInputStream(System.getProperty("user.dir") + "\\src\\test\\resources\\Excel_Data\\Test_Data3.xlsx");
         XSSFWorkbook book = new XSSFWorkbook(file);
         XSSFSheet s = book.getSheet("Sheet1");
 
