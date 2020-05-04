@@ -3,13 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="luxeregister.MultiLoginExecl">
+      <class name="luxeregister.LoginPOIListener">
         <methods>
-          <include name="TestSetup"/>
-          <include name="CloseBrowser"/>
-          <include name="ReadData"/>
+          <include name="logintest" invocation-numbers="0 1 2"/>
+          <include name="closebrowser"/>
+          <include name="BrowserSetup"/>
         </methods>
-      </class> <!-- luxeregister.MultiLoginExecl -->
+      </class> <!-- luxeregister.LoginPOIListener -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

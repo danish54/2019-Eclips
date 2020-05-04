@@ -10,15 +10,19 @@ import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 
 
-public class TestUtil  
+public class TestUtility  
 {
+	public static String ScreenshotName;
+	public static String ScreenshotPath;
+	
 	
 	public static void capturescreenshot(WebDriver driver) throws IOException{
 		Date d = new Date();
 		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH-mm-ss");
+		 ScreenshotName = sdf.format(d) + ".jpg";
+		 ScreenshotPath =  "E:\\eclipse-jee-neon-3-win32-x86_64\\New folder\\Automation\\src\\excel\\" + ScreenshotName;
 		File ssFile = ((TakesScreenshot) (driver)).getScreenshotAs(org.openqa.selenium.OutputType.FILE);
-		FileUtils.copyFile(ssFile, new File(
-				"E:\\eclipse-jee-neon-3-win32-x86_64\\New folder\\Automation\\src\\excel\\" + sdf.format(d) + ".jpg"));
+		FileUtils.copyFile(ssFile, new File(ScreenshotPath));
 		
 	}
 

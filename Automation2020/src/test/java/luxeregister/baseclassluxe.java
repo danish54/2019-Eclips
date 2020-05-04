@@ -17,17 +17,25 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.io.FileHandler;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import com.relevantcodes.extentreports.ExtentReports;
+import com.relevantcodes.extentreports.ExtentTest;
+
+import Utility.ExtentManager;
+
+
 public class baseclassluxe {
 
 	public static WebDriver driver;
 	public static Properties config = new Properties();
 	public static Properties OR = new Properties();
 	public static FileInputStream fis;
-                  WebDriverWait wait;
-	
+                  static WebDriverWait wait;
+                  public static org.apache.log4j.Logger log = org.apache.log4j.Logger.getLogger("devpinoylogger");
+	public ExtentReports rep = ExtentManager.getInstance();
+	public ExtentTest test;
 	
 	// Setup Browser
-	public void Setup() throws IOException {
+	public static void Setup() throws IOException {
 
 		// loading config properties
 
@@ -40,26 +48,24 @@ public class baseclassluxe {
 
 		
 		System.setProperty("webdriver.chrome.driver",
-				"C:\\Users\\ACER.NITRO 5\\Downloads\\eclipse\\workspace\\dependencies\\chromedriver.exe");
+				System.getProperty("user.dir") + "\\src\\test\\resources\\driverDependencies\\chromedriver.exe");
 
+		
 		driver = new ChromeDriver();
 		driver.manage().window().maximize();
 		driver.manage().timeouts().pageLoadTimeout(80, TimeUnit.SECONDS);
 		driver.manage().timeouts().implicitlyWait(40, TimeUnit.SECONDS);
 		driver.manage().deleteAllCookies();
 		
-		driver.get("https://dev.theluxeregister.com/");
+		driver.get(config.getProperty("baseurl"));
 		wait = new WebDriverWait(driver, 30);
-		driver.findElement(By.className("nav-link sign-in-btn")).click();
+		driver.findElement(By.xpath(OR.getProperty("SigninlinkXpath"))).click();
 	}
 
 	// Login method with hardcode locators
 	public void loginhrd() throws IOException {
 
-		baseclassluxe base = new baseclassluxe();
-		
-		
-		base.Setup();
+		baseclassluxe.Setup();
 		
 		driver.findElement(By.id("userEmail")).sendKeys("danish.ali@hipster-inc.com");
 		driver.findElement(By.id("pass")).sendKeys("123456789");
@@ -92,9 +98,7 @@ public class baseclassluxe {
 	//login method with OR properties
 	public void loginOR() throws IOException, InterruptedException {
 
-		baseclassluxe base = new baseclassluxe();
-
-		base.Setup();
+		baseclassluxe.Setup();
 		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 		driver.get(config.getProperty("baseurl"));
 		driver.findElement(By.id(OR.getProperty("username_id"))).sendKeys(config.getProperty("username"));
@@ -107,7 +111,7 @@ public class baseclassluxe {
 
 	
 	//screenshot first method using FileUtils
-	public void captureSnapShot() throws IOException {
+	public static void captureSnapShot() throws IOException {
 		Date d = new Date();
 		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH-mm-ss");
 		File ssFile = ((TakesScreenshot) (driver)).getScreenshotAs(OutputType.FILE);
