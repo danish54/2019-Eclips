@@ -14,7 +14,7 @@ public class login  {
 	WebDriverWait wait;
 	
 	@Test(priority = 1)
-	public void login() throws InterruptedException {
+	public void login() {
 		
 		System.setProperty("webdriver.chrome.driver",System.getProperty("user.dir") + "\\src\\test\\resources\\driverDependencies\\chromedriver.exe");
 
@@ -36,13 +36,15 @@ public class login  {
         driver.findElement(By.id("pass")).sendKeys("123456789");
         
         driver.findElement(By.xpath("//a[@class='btn dark-btn sign-btn']")).click();
-        Thread.sleep(3000L);
+        try {
+			Thread.sleep(3000L);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 
         driver.findElement(By.xpath("//li[@class='li-pr2 active-menu']")).click();
         driver.findElement(By.xpath("//button[@class='profile-log-out']")).click();
-       
-    	  
-     
 	
 	}
 	
