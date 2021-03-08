@@ -18,7 +18,7 @@ public class TestUtility
 	public static String ScreenshotName;
 	public static String ScreenshotPath;
 	
-	
+	// screenshot first method using FileHandler
 	public static void capturescreenshot() throws IOException{
 		Date d = new Date();
 		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH-mm-ss");
