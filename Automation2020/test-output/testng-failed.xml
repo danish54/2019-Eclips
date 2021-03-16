@@ -3,12 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="luxeregister.LinkCountTest">
+      <class name="practice.Dropdown">
         <methods>
-          <include name="operation"/>
-          <include name="Closebrowser"/>
+          <include name="JsDropdown"/>
+          <include name="openbrowser"/>
+          <include name="closeBrowser"/>
         </methods>
-      </class> <!-- luxeregister.LinkCountTest -->
+      </class> <!-- practice.Dropdown -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

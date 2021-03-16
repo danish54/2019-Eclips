@@ -1,6 +1,5 @@
 package practice;
 
-import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
@@ -38,16 +37,34 @@ public class Dropdown {
 		se.selectByIndex(3);
 	}
 
-	@Test
+	@Test(enabled = false)
 	public void dropdown2() throws InterruptedException {
 		WebElement el = driver.findElement(By.xpath("//div[contains(text(),'Select Option')]"));
+		
+		////*[@id="react-select-2-option-0-1"]
+		////*[@id="react-select-2-option-0-1"]
+		////*[@id="react-select-2-option-0-0"]
+		////*[@id="react-select-2-option-1-0"]
+		////*[@id="react-select-2-option-1-1"]
+		
 		el.click();
 		Actions key = new Actions(driver);
-		key.moveToElement(el).click().perform();
-		Thread.sleep(3000);
-		key.sendKeys(Keys.chord(Keys.DOWN, Keys.DOWN, Keys.ENTER)).perform();
+		key.moveToElement(el).perform();
+		/*Thread.sleep(3000);
+		key.sendKeys(Keys.chord(Keys.DOWN, Keys.DOWN, Keys.ENTER)).perform();*/
 	}
 
+	@Test(enabled = true)
+	public void JsDropdown() throws InterruptedException {
+		Actions key = new Actions(driver);
+		WebElement el = driver.findElement(By.xpath("//div[contains(text(),'Select Option')]"));
+		Thread.sleep(2000);
+		key.moveToElement(el).perform();
+		Thread.sleep(2000);
+		driver.findElement(By.xpath("//*[@id='react-select-2-option-0-1']")).click();
+		Thread.sleep(2000);
+	}
+	
 	@AfterMethod
 	public void closeBrowser() throws InterruptedException {
 		Thread.sleep(3000);
