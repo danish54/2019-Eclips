@@ -61,7 +61,14 @@ public class Dropdown {
 		Thread.sleep(2000);
 		key.moveToElement(el).perform();
 		Thread.sleep(2000);
-		driver.findElement(By.xpath("//*[@id='react-select-2-option-0-1']")).click();
+		try {
+			driver.findElement(By.xpath("//*[@id='react-select-2-option-0-1']")).click();
+		} catch (Exception e) {
+			// TODO: handle exception
+			System.out.println("Hello "+e.toString());
+		}
+		
+		
 		Thread.sleep(2000);
 	}
 	
