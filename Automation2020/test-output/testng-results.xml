@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<<<<<<< HEAD
 <testng-results ignored="2" total="3" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
@@ -16,10 +17,37 @@
           </reporter-output>
         </test-method> <!-- JsDropdown -->
         <test-method is-config="true" signature="closeBrowser()[pri:0, instance:practice.Dropdown@72a7c7e0]" started-at="2021-03-17T14:47:55 IST" name="closeBrowser" finished-at="2021-03-17T14:47:59 IST" duration-ms="4014" status="PASS">
+=======
+<testng-results ignored="0" total="3" passed="3" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2021-03-17T16:33:44 IST" name="Default suite" finished-at="2021-03-17T16:33:53 IST" duration-ms="8345">
+    <groups>
+    </groups>
+    <test started-at="2021-03-17T16:33:44 IST" name="Default test" finished-at="2021-03-17T16:33:53 IST" duration-ms="8345">
+      <class name="test.shawafts">
+        <test-method is-config="true" signature="openbrowser()[pri:0, instance:test.shawafts@4d5b6aac]" started-at="2021-03-17T16:33:44 IST" name="openbrowser" finished-at="2021-03-17T16:33:49 IST" duration-ms="4865" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- closeBrowser -->
-      </class> <!-- practice.Dropdown -->
+        </test-method> <!-- openbrowser -->
+        <test-method signature="test1()[pri:1, instance:test.shawafts@4d5b6aac]" started-at="2021-03-17T16:33:49 IST" name="test1" finished-at="2021-03-17T16:33:49 IST" duration-ms="248" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- test1 -->
+        <test-method signature="test2()[pri:2, instance:test.shawafts@4d5b6aac]" started-at="2021-03-17T16:33:49 IST" name="test2" finished-at="2021-03-17T16:33:52 IST" duration-ms="2185" status="PASS">
+>>>>>>> 137823ab4ccedb54a91ad7f873e044d002b2f92f
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- test2 -->
+        <test-method signature="test3()[pri:3, instance:test.shawafts@4d5b6aac]" started-at="2021-03-17T16:33:52 IST" name="test3" finished-at="2021-03-17T16:33:52 IST" duration-ms="220" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- test3 -->
+        <test-method is-config="true" signature="teardown()[pri:0, instance:test.shawafts@4d5b6aac]" started-at="2021-03-17T16:33:52 IST" name="teardown" finished-at="2021-03-17T16:33:53 IST" duration-ms="768" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- teardown -->
+      </class> <!-- test.shawafts -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
